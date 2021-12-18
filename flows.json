@@ -1,0 +1,348 @@
+[
+    {
+        "id": "de293ec692159be5",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ecdf32ad3b18984b",
+        "type": "mqtt in",
+        "z": "de293ec692159be5",
+        "name": "",
+        "topic": "topic/azkira/mqtt/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3d34aa0e6959efc1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "6b6c07f8f7642fa9"
+            ]
+        ]
+    },
+    {
+        "id": "803897ed4654d3bb",
+        "type": "link out",
+        "z": "de293ec692159be5",
+        "name": "To Dashboard",
+        "mode": "link",
+        "links": [
+            "d18084a56195b6b7"
+        ],
+        "x": 535,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d18084a56195b6b7",
+        "type": "link in",
+        "z": "de293ec692159be5",
+        "name": "From Subscriber",
+        "links": [
+            "803897ed4654d3bb"
+        ],
+        "x": 635,
+        "y": 320,
+        "wires": [
+            [
+                "c3a64f2e608d0883",
+                "1b889fbe25ba1a26",
+                "b0e8526cd1b4cd84"
+            ]
+        ]
+    },
+    {
+        "id": "c3a64f2e608d0883",
+        "type": "debug",
+        "z": "de293ec692159be5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b0e8526cd1b4cd84",
+        "type": "ui_text",
+        "z": "de293ec692159be5",
+        "group": "e97d924aadbc1888",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Humidity Text",
+        "label": "Humidity:",
+        "format": "{{msg.payload}} %",
+        "layout": "row-spread",
+        "className": "",
+        "x": 870,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1b889fbe25ba1a26",
+        "type": "ui_gauge",
+        "z": "de293ec692159be5",
+        "name": "Humidity Gauge",
+        "group": "e97d924aadbc1888",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 880,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "6b6c07f8f7642fa9",
+        "type": "function",
+        "z": "de293ec692159be5",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "803897ed4654d3bb"
+            ]
+        ]
+    },
+    {
+        "id": "916ec7c1248919e7",
+        "type": "mqtt in",
+        "z": "de293ec692159be5",
+        "name": "",
+        "topic": "topic/azkira/mqtt/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3d34aa0e6959efc1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 480,
+        "wires": [
+            [
+                "d3c2dd0ccc5b2966"
+            ]
+        ]
+    },
+    {
+        "id": "e1c41496620d0675",
+        "type": "link out",
+        "z": "de293ec692159be5",
+        "name": "To Dashboard",
+        "mode": "link",
+        "links": [
+            "0acb15529765c201"
+        ],
+        "x": 595,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "0acb15529765c201",
+        "type": "link in",
+        "z": "de293ec692159be5",
+        "name": "From Subscriber",
+        "links": [
+            "e1c41496620d0675"
+        ],
+        "x": 695,
+        "y": 480,
+        "wires": [
+            [
+                "26034e66bab32d89",
+                "838aec572db51275",
+                "7b9a29cba159d0ec"
+            ]
+        ]
+    },
+    {
+        "id": "26034e66bab32d89",
+        "type": "debug",
+        "z": "de293ec692159be5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "838aec572db51275",
+        "type": "ui_text",
+        "z": "de293ec692159be5",
+        "group": "00fe036398677924",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Temperature Text",
+        "label": "Temperature:",
+        "format": "{{msg.payload}} °C",
+        "layout": "row-spread",
+        "className": "",
+        "x": 930,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "d3c2dd0ccc5b2966",
+        "type": "function",
+        "z": "de293ec692159be5",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 480,
+        "wires": [
+            [
+                "e1c41496620d0675"
+            ]
+        ]
+    },
+    {
+        "id": "7b9a29cba159d0ec",
+        "type": "ui_chart",
+        "z": "de293ec692159be5",
+        "name": "Temperature Chart",
+        "group": "00fe036398677924",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d34aa0e6959efc1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "52.188.125.251",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e97d924aadbc1888",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "e2024cf09516d7ab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "00fe036398677924",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "e2024cf09516d7ab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e2024cf09516d7ab",
+        "type": "ui_tab",
+        "name": "MQTT Data",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
